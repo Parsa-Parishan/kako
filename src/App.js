@@ -1,12 +1,11 @@
 import { BrowserRouter as Router } from "react-router-dom";
-
+import AnimatedRoute from "./router/AnimatedRoutes";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-      </header>
-    </div>
+    <Router>
+      <AnimatedRoute />
+    </Router>
   );
 }
 
