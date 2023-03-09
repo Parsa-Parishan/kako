@@ -1,8 +1,7 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 
 export default function Landing() {
-  
   return (
     <div className="landing">
       <div className="intro">
@@ -17,7 +16,9 @@ export default function Landing() {
           Faster than any other Kako.ai
         </p>
       </div>
-      <div className="button">Try Chat with Kako.ai</div>
+      <div className="button">
+        <Link to="chat">Try Chat with Kako.ai</Link>
+      </div>
     </div>
   );
 }
