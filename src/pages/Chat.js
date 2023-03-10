@@ -1,12 +1,18 @@
 import React, { useState } from "react";
 import { apiKey } from "../data/Data";
+import { FaRegArrowAltCircleUp, FaUserAlt, FaBrain } from "react-icons/fa";
 
 export default function Chat() {
   const [value, setValue] = useState("");
-  const [answer, setAnswer] = useState("");
+  const [conversations, setConversations] = useState([]);
 
   const handleChange = (e) => {
     setValue(e.target.value);
+  };
+
+  const handleConversation = (e) => {
+    conversations.splice(0, 0, e);
+    setConversations([...conversations]);
   };
 
   const callApi = async () => {
@@ -31,7 +37,14 @@ export default function Chat() {
       });
       if (response.ok) {
         const jsonResponse = await response.json(response);
-        setAnswer(jsonResponse.choices[0].text);
+        console.log(jsonResponse);
+        const something = {
+          id: jsonResponse.id,
+          q: value,
+          a: jsonResponse.choices[0].text,
+        };
+        handleConversation(something);
+        setValue("");
       }
     } catch (err) {
       console.log(err);
@@ -39,16 +52,36 @@ export default function Chat() {
   };
   return (
     <div className="chat">
-      <textarea
-        name=""
-        id=""
-        rows="1"
-        value={value}
-        onChange={handleChange}
-        placeholder="ask me a question"
-      />
-      <button onClick={callApi}>submit</button>
-      <div className="answer">{answer !== "" ? <div>{answer}</div> : null}</div>
+      {/* <div className="answer">{answer !== "" ? <div>{answer}</div> : null}</div> */}
+      <div className="conversation">
+        {conversations.map((conversation) => {
+          return (
+            <div className="something" key={conversation.id}>
+              <div className="question">{conversation.q}</div>
+              <div className="answer">{conversation.a}</div>
+            </div>
+          );
+        })}
+      </div>
+      <div className="chat-area">
+        <textarea
+          name=""
+          id=""
+          rows="1"
+          value={value}
+          onChange={handleChange}
+          placeholder="ask me a question"
+          style={{
+            border: "none",
+            padding: "0.5rem",
+            background: "#343434",
+            color: "white",
+          }}
+        />
+        <button onClick={callApi}>
+          <FaRegArrowAltCircleUp />
+        </button>
+      </div>
     </div>
   );
 }
