@@ -190,6 +190,25 @@ h4 {
 .nav-wrapper .options div:hover {
   background-color: #b6b6b6;
 }
+@media (min-width: 1024px) {
+  .nav-wrapper .options {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: initial;
+    width: -moz-fit-content;
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    z-index: 3;
+    background-color: #4c4c4c;
+    border: none;
+  }
+  .nav-wrapper .options div {
+    background-color: #4c4c4c;
+    border: none;
+  }
+}
 
 .active {
   background-color: #b6b6b6;
