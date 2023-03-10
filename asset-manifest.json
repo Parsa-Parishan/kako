@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/kako/static/css/main.f664951e.css",
-    "main.js": "/kako/static/js/main.0cdd5b7f.js",
+    "main.css": "/kako/static/css/main.ce027fce.css",
+    "main.js": "/kako/static/js/main.84466f38.js",
     "index.html": "/kako/index.html",
-    "main.f664951e.css.map": "/kako/static/css/main.f664951e.css.map",
-    "main.0cdd5b7f.js.map": "/kako/static/js/main.0cdd5b7f.js.map"
+    "main.ce027fce.css.map": "/kako/static/css/main.ce027fce.css.map",
+    "main.84466f38.js.map": "/kako/static/js/main.84466f38.js.map"
   },
   "entrypoints": [
-    "static/css/main.f664951e.css",
-    "static/js/main.0cdd5b7f.js"
+    "static/css/main.ce027fce.css",
+    "static/js/main.84466f38.js"
   ]
 }
