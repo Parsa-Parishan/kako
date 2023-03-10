@@ -11,7 +11,7 @@ export default function Chat() {
   };
 
   const handleConversation = (e) => {
-    conversations.splice(0, 0, e);
+    conversations.push(e);
     setConversations([...conversations]);
   };
 

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FaBars } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 export default function Nav() {
   const [slide, setSlide] = useState();
@@ -11,9 +12,11 @@ export default function Nav() {
     <div className="nav-wrapper">
       <div className="nav">
         <div className="logo">
-          <h2>
-            kako<span>.</span>ai
-          </h2>
+          <Link to="/kako">
+            <h2>
+              kako<span>.</span>ai
+            </h2>
+          </Link>
         </div>
         <div className={`menu-bar ${slide && "active"}`} onClick={handleClick}>
           <FaBars />

@@ -9,7 +9,7 @@ export default function Landing() {
         <h2 className="second">Ask your Kako,</h2>
         <h2 className="third">Whatever you need</h2>
       </div>
-      <div className="chat">
+      <div className="cha">
         <p>
           <span>Find, Buy, Sell, or rent</span> houses with Kako.ai
           <br />
